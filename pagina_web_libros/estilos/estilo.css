@@ -1,0 +1,592 @@
+@font-face {
+    font-family: 'open-sans';
+    src: url('../tipografia/open-sans-regular.ttf') format('truetype');
+    font-weight: normal;/*grosor de letra*/
+    font-style: normal;/*tipo de letra (regular)*/
+}
+
+@font-face {
+    font-family: 'open-sans';
+    src: url('../tipografia/open-sans-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;/*el tamaño total de un elemento no aumente cuando se agregue relleno*/
+    margin: 0;/*quita margenes por defecto*/
+    padding: 0;/*quita rellenos por defecto*/
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'open-sans', sans-serif;
+}
+
+/* ..........................................ENCABEZADO.................................................... */
+
+.encabezado {
+    background-color: #0b2241;   
+    color: #ffffff;               
+    display: flex;                  
+    align-items: center;            
+    justify-content: space-between; /*Alinea horizontalmente*/
+    padding: 10px 40px;             /*Agrega espacio interno alrededor del contenido:10px arriba y abajo. 40px a la izquierda y derecha.*/        
+    width: 100%;                    
+    height: 80px;                   
+}
+
+
+.contenedor-logo-titulo {
+    display: flex;                  
+    align-items: center;           
+    gap: 12px;                    
+}
+
+
+.contenedor-logo-titulo img {
+    height: 75px;                 
+    width: auto;                   
+}
+
+.contenedor-logo-titulo h1 {          
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: bold;
+    white-space: nowrap;/*Prohibe los saltos de linea automaticos*/
+}
+
+/* formato menu principal */
+.menu ul {
+    list-style: none;/*elimina puntos negros*/
+    display: flex;                 
+    gap: 15px;                     
+    align-items: center;
+}
+
+/*Contenedor submenu */
+.menu ul li {
+    position: relative; /*Permite que el submenu (absolute)se ubique debajo de este <li> y no respecto a la ventana/body*/
+}
+
+/*color/letra menu principal*/
+.menu a {
+    color: #ffffff;
+    text-decoration: none;/*quita subrayado menu por defecto*/
+    font-size: 16px;             
+    font-weight: bold;          
+    display: block;
+    padding: 10px 5px;/*agrega un area de clic adecuada alrededor del texto*/
+}
+
+/* .........................................SUBMENU DESPLEGABLE .................................................*/
+
+.menu ul li .submenu {
+    display: none;                 /*oculta el submenu*/
+    position: absolute;            /*posiciona el submenu debajo*/
+    top: 100%;                     /*ubica la caja desplegable debajo del texto del menu*/
+    background-color: #0b2241;  
+    flex-direction: column;       
+    padding: 10px 0;               /*espacio abajo y arriba de cada opcion*/
+    min-width: 180px;              /*ancho minimo de la caja desplegable*/
+    border-radius: 0 0 8px 8px;   
+    z-index: 100;                  /*asegura que el submenu aparezca por encima del carrusel/contenido*/
+}
+
+/* Estilo del submenu */
+.menu ul li .submenu li a {
+    font-size: 14px;
+    font-weight: normal;          /*tipo letra*/
+    padding: 1px 1px;             /*espacio en cada opcion del submenu*/
+}
+
+/*Cambio a color naranja al pasar el mouse en submenu */
+.menu ul li .submenu li a:hover {
+    background-color: #f39c12; 
+}
+
+/* Muestra el submenu al pasar el cursor*/
+.menu ul li:hover .submenu {
+    display: flex;                
+}
+
+
+
+/*buscador donde input es una caja de texto*/
+.buscador input {
+    padding: 8px 18px;             
+    border-radius: 20px;           
+    border: none;                  /*quita borde gris por defecto*/
+    outline: none;                 /*Quita borde azul/negro alrededor del input al hacer clic*/
+    width: 220px;                  
+    font-size: 14px;              
+}
+
+/* ...................CONTENEDOR PRINCIPAL Y TARJETA DESTACADA.................................................... */
+
+/*define el area de trabajo y la centra*/
+.contenedor-principal {
+    max-width: 1250px;             /*ancho entre imagen y texto con el marco */
+    margin: 40px auto;             /*alto de la tarjeta */
+}
+
+/*tarjeta destacada (gris)*/
+.tarjeta-img-destacada {
+    background-color: #ffffff;   
+    border: 1px solid #cccccc;   
+    border-radius: 4px;            
+    padding: 42px 150px;           /*42 px altura o grosor de la tarjeta, 150 px hacia el centro*/
+    display: flex;                
+    justify-content: center;/*para contenedores flex o grid para alinear y distribuir los elementos*/
+    align-items: center;           /*Centra verticalmente el texto con la imagen*/
+    gap: 80px;                     
+}
+
+/*Columna de texto*/
+.info-destacada {
+    flex: 1; 
+    /* Permite que la columna de texto tome el espacio disponible sobrante 
+    Calcula cuanto mide la imagen de al lado, le da su espacio, y hace que la caja 
+    de texto se estire para ocupar todo el espacio restante dentro de la tarjeta*/
+}
+
+/*titulo del libro dentro del contenedor*/
+.info-destacada h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;          /*espacio hacia abajo*/
+    color: #000000;             
+}
+
+.info-destacada .descripcion {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.5;             /*interlineado */
+    margin-bottom: 25px;          /*espacio hacia abajo*/
+}
+
+.info-destacada .precio {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 30px;          /*espacio hacia abajo*/
+}
+
+/* boton de comprar */
+.btn-comprar {
+    display: inline-block;
+    background-color: #f39c12;            
+    color: #ffffff;                    
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 30px;/*altura y anchura*/
+    border-radius: 25px;          
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-comprar:hover {
+    background-color: #d35400f7;          
+}
+
+/*medidas de la img portada del libro*/
+.imagen-destacada img {
+    max-height: 430px;/*altura*/
+    width: auto;                            
+}
+
+
+/*.....................................CARRUSEL............................................................*/
+
+.contenedor-carrusel {
+    position: relative;/*Todo elemento dentro que use position:absolute 
+    se medira desde los bordes del contenedor, no de la pantalla completa y todos 
+    los elementos absolutos que esten adentro se moveran automaticamente junto con el contenedor*/
+}
+
+/* Oculta las tarjetas con img*/
+.tarjeta-img-destacada {
+    display: none;
+}
+
+/* Solo muestra la tarjeta con img que tenga la clase "activa" */
+.tarjeta-img-destacada.activa {     
+    display: flex;/*hace visible unicamente esa tarjeta y recupera su diseño original en fila*/
+}
+
+/* Puntos indicadores */
+.puntos-carrusel {
+    display: flex;
+    justify-content: center;    
+    gap: 10px;                  
+    margin-top: 20px;/*Empuja la fila de puntos hacia abajo*/
+}
+
+.punto {
+    width: 12px;               
+    height: 12px;               
+    background-color: #aaaaaa;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.punto.activo {
+    background-color: #f39c12;
+}
+
+/* .........................................PIE DE PAGINA (FOOTER).....................................................*/
+
+.pie-pagina {
+    background-color: #0b2241; 
+    color: #ffffff;           
+    padding: 12px 40px 8px 40px; /*Relleno: arriba, derecha, abajo, izquierda */
+    margin-top: 10px;            
+    width: 100%;
+}
+
+/*padre, organizador general*/
+.contenedor-pie-pagina {
+    display: flex;                  /*bloques o columnas en fila horizontal*/
+    justify-content: space-between; /*Empuja la 1ra columna hacia la izquierda y la ultima hacia la derecho*/
+    align-items: flex-start;        /*Alinea todas las columnas en la parte superior*/
+    gap: 15px;                    
+}
+
+.columna-pie-pagina {
+    flex: 1;/*cada una de las columnas tendra el mismo ancho y se repartiran el espacio por igual.*/
+}
+
+/*titulos de cada columna*/
+.columna-pie-pagina h4 {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;            
+    color: #ffffff;
+}
+
+/* Ajuste de la columna del logo */
+.columna-pie-pagina.logo-pie-pagina {
+    flex: 0 0 auto;       /* Evita que la columna del logo crezca a lo ancho */
+}
+
+
+.columna-pie-pagina p {
+    font-size: 11px;
+    line-height: 1.3;    
+    color: #ffffff;
+}
+
+/*imagen contenida en la columna del logo*/
+.logo-pie-pagina img {
+    height: 70px;  
+    width: auto;   
+    display: block; /*Elimina el espacio en blanco invisible que las img dejan por defecto debajo de su borde*/
+}
+
+.iconos-redes-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+.iconos-redes-sociales img {
+    width: 27px; 
+    height: 27px;
+    
+}
+
+.copyright {
+    text-align: center;  
+    margin-top: 8px;     
+}
+
+
+.copyright p {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+/* ...................CATALOGO DE PRODUCTOS................... */
+
+
+.marco-productos {
+    border: 1px solid #cccccc;
+    padding: 30px;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+/* sistema de maquetacion por cuadricula de 4 columnas */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Tarjeta individual de cada libro */
+.tarjeta-producto {
+    border: 1px solid #cccccc;
+    padding: 20px 15px;
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;/*acomoda las opciones una debajo de otra*/
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.tarjeta-producto img {
+    height: 150px;
+    width: auto;
+    object-fit: contain;/* Mantiene la proporcion de la imagen */
+    margin-bottom: 12px;
+}
+
+.tarjeta-producto h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 6px;
+    min-height: 38px; 
+    display: flex; /*acomoda en fila horizontal*/
+    align-items: center;
+    justify-content: center;
+}
+
+.precio-producto {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.btn-agregar {
+    background-color: #f39c12;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+}
+
+/* Estilo icono carrito */
+.btn-agregar .icono-carrito {
+    width: 20px;            
+    height: 20px;           
+    object-fit: contain;   
+    filter: brightness(0) invert(1); /*vuelve la imagen mas blanca*/
+}
+
+.btn-agregar:hover {
+    background-color: #e67e22;
+}
+
+
+.btn-ver-mas {
+    display: block;
+    width: 100%;
+    border: 1px solid #f39c12;
+    background-color: #ffffff; 
+    color: #f39c12;
+    text-decoration: none;
+    padding: 6px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-ver-mas:hover {
+    background-color: #f39c12;
+    color:#ffffff;
+}
+
+
+.contenedor-comprar {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-comprar-ahora {
+    display: inline-block;/*el enlace se comporta como una caja que acepta padding y dimensiones,sin romper la linea del texto*/
+    background-color: #28A745;
+    color: #ffffff;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: background-color 0.2s ease;
+    border: none;/* Quita el borde gris*/
+    outline: none;/* Quita el contorno al hacer clic */
+    cursor: pointer;
+}
+
+.btn-comprar-ahora:hover {
+    background-color: #e67e22;
+}
+
+/* .....................................................CONTACTO.............................................................. */
+
+.tarjeta-contacto {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    overflow: hidden;/*recortar todo el contenido que sobresalga de los limites de una caja*/
+    
+}
+
+/* Columna Izquierda (Azul marino) */
+.contacto-info {
+    background-color: #0b2241;
+    color: #ffffff;
+    flex: 0 0 380px;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para la img del icono usuario */
+.contacto-info .icono-usuario {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    
+}
+
+.contacto-info h3 {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.contacto-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/*el de escribenos y te atenderemos a la brevedad*/
+.contacto-info .subtitulo {
+    font-size: 13px;
+    color: #d1d5db;
+    margin-bottom: 35px;
+}
+
+.contacto-info .datos-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.contacto-info .correo-telefono-pagina {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Estilo para las img de correo y telefono */
+.contacto-info .correo-telefono-pagina img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;   
+}
+
+.contacto-info .horarios {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #e5e7eb;
+    margin-top: auto;
+}
+
+/* Columna Derecha (Formulario) */
+.contacto-formulario {
+    flex: 1;
+    padding: 45px 50px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-formulario h2 {
+    font-size: 26px;
+    color: #0b2241;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.contacto-formulario .grupo-campo {
+    margin-bottom: 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*label Le aplica el estilo a todas las etiquetas <label> que estan dentro de .contacto-formulario, nombre,apellido etc.*/
+.contacto-formulario label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b2241;
+    margin-bottom: 8px;
+}
+
+
+.contacto-formulario input {
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    padding: 8px 0;
+    font-size: 15px;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contacto-formulario input:focus {
+    border-bottom-color: #1fc8b2;
+}
+
+
+.contenedor-btn-enviar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.btn-enviar {
+    background-color: #24cca8;
+    color: #ffffff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.btn-enviar:hover {
+    background-color: #0b2241;
+}

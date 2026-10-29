@@ -1,0 +1,250 @@
+* {box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;/*fondo dentras de la img*/
+}
+
+.contenedor-img-laberinto {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-image: url('../imagenes/laberinto.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.objeto-animado {
+  position: absolute;
+  width: 42px;            
+  height: 42px;
+  background-color: #00e5ff; 
+  border-radius: 50%;
+  top: 20px;           
+  left: 198px;           
+  
+  animation: resolverLaberinto 12s linear infinite;
+}
+@keyframes resolverLaberinto {
+
+  0% {
+    top: 20px;
+    left: 198px;
+    width: 42px;
+    height: 42px;
+    border-radius: 0%;         /* Forma de cuadrado */
+    background-color: #00e5ff;
+    clip-path: none;
+    transform: rotate(0deg);
+  }
+
+  4% {
+    top: 20px;
+    left: 198px;
+    width: 42px;
+    height: 42px;
+    border-radius: 0%;
+    background-color: #00e5ff;
+  }
+
+ 
+  7% {
+    top: 20px;
+    left: 198px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;  /* se forma en circulo */
+    background-color: #00e5ff;
+  }
+
+  /* espera un segundo del 7% al 12% */
+  12% {
+    top: 20px;
+    left: 198px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #00e5ff;
+  }
+
+
+  /*baja*/
+  15% {
+    top: 80px;
+    left: 198px;
+  }
+
+  /*derecha*/
+  20% {
+    top: 80px;
+    left: 320px;
+  }
+
+  /*baja*/
+  25% {
+    top: 140px;
+    left: 320px;
+  }
+
+  /*izquierda*/
+  28% {
+    top: 140px;
+    left: 255px;
+  }
+
+  /*baja*/
+  34% {
+    top: 255px;
+    left: 255px;
+  }
+
+  /*derecha*/
+  39% { 
+    top: 255px;
+    left: 378px;
+  }
+
+  /*baja*/
+  43% {
+    top: 374px;
+    left: 378px;
+  }
+
+  /*izquierda*/
+  47% {
+    top: 374px;
+    left: 260px;
+  }
+
+  /*sube*/
+  51% {
+    top: 315px;
+    left: 260px;
+  }
+
+  /*izquierda*/
+  55% {
+    top: 315px;
+    left: 195px;
+  }
+
+  /*baja*/
+  58% {
+    top: 380px;
+    left: 195px;
+  }
+
+  /*izquierda*/
+  61% {
+    top: 380px;
+    left: 140px;
+  }
+
+  /*sube*/
+  64% {
+    top: 257px;
+    left: 140px;
+  }
+
+  /*izquierda*/
+  67% {
+    top: 257px;
+    left: 81px;
+  }
+
+  /*abajo*/
+  70% {
+    top:320px;
+    left: 81px; 
+  }
+
+  /*izquierda*/
+  73% {
+    top: 320px;
+    left: 5px;
+    border-radius: 50%;
+    background-color: #00e5ff;
+    clip-path: none;
+    transform: rotate(0deg);
+  }
+
+  /*RECORRIDO POR LAS ORILLAS*/
+
+  74% {
+    top: 320px;
+    left: 5px;
+    border-radius: 0%;
+    background-color: #f1c40f;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(0deg);
+  }
+
+  74.5% {
+    top: 320px;
+    left: 5px;
+    border-radius: 0%;
+    background-color: #f1c40f;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(0deg);
+  }
+  
+  80% {
+    top: 20px;
+    left: 5px;
+    border-radius: 0%;
+    background-color: #e74c3c;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(360deg);
+  }
+  
+  90% {
+    top: 20px;
+    left: 170px; 
+    border-radius: 0%;
+    background-color: #9b59b6; 
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(720deg);
+  }
+
+ 
+  95% {
+    top: 20px;
+    left: 198px; 
+    width: 42px;
+    height: 42px;
+    border-radius: 0%;
+    background-color: #00e5ff;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 50% 100%, 0% 100%, 0% 100%, 0% 0%, 0% 0%);
+    transform: rotate(900deg);
+  }
+
+  
+  100% {
+    top: 20px;
+    left: 198px;
+    width: 42px;
+    height: 42px;
+    border-radius: 0%;
+    background-color: #00e5ff;
+    clip-path: none;
+    transform: rotate(1080deg);
+  }
+}
+/*
+IZQUIERDA:
+cuando va a la izq debe ser menor al ultimo left de derecha
+DERECHA:
+cuando vaya a la derecha debe ser mayor al ultimo left de izquierda
+ABAJO:
+cuando vaya hacia abajo debe ser mayor al ultimo top
+ARRIBA:
+cuando vaya hacia arriba debe ser menor al ultimo top
+*/

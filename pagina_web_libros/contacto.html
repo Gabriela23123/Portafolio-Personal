@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+</head>
+
+<body>
+
+    <!--........................................ ENCABEZADO.................................................. -->
+    <header class="encabezado">
+        
+        <div class="contenedor-logo-titulo">
+            <img src="imagenes/logo.png" alt="Logo Letras en la Nube">
+            <h1>Letras En La Nube</h1>
+        </div>
+
+        <!-- Menu principal -->
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li style="color: white;">|</li>
+                
+                <!-- submenu -->
+                <li class="dropdown">
+                    <a href="catalogo.html">Género ▾</a>
+                    <ul class="submenu">
+                        <li><a href="catalogo.html">Ficción</a></li>
+                        <li><a href="catalogo.html">Desarrollo Personal</a></li>
+                        <li><a href="catalogo.html">Clásicos</a></li>
+                        <li><a href="catalogo.html">Manga</a></li>
+                    </ul>
+                </li>
+
+                <li style="color: white;">|</li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- buscador -->
+        <div class="buscador">
+            <input type="text" placeholder="Buscar">
+        </div>
+
+    </header>
+
+
+    <!-- ...........................CONTENIDO DE CONTACTO................................................... -->
+
+    <main class="contenedor-principal">
+        <div class="tarjeta-contacto">
+            
+            <div class="contacto-info">
+                <img src="imagenes/icono_usuario.png" alt="Usuario" class="icono-usuario">
+                <h3>INFORMACIÓN DE CONTACTO</h3>
+                <h2>¿Necesitas ayuda?</h2>
+                <p class="subtitulo">Escríbenos y te atenderemos a la brevedad.</p>
+
+                <div class="datos-contacto">
+                    <div class="correo-telefono-pagina">
+                        <img src="imagenes/imagen_mensaje_blanco.png" alt="Correo">
+                        <span>LibrosEnLaNube@Gmail.com</span>
+                    </div>
+
+                    <div class="correo-telefono-pagina">
+                        <img src="imagenes/imagen_celular_blanco.png" alt="Teléfono">
+                        <span>+52 (669) 912-3456</span>
+                    </div>
+                </div>
+
+                <p class="horarios">
+                    <strong>Horarios de atención:</strong> Lunes a Viernes: 9:00 AM – 6:00 PM GMT/7
+                </p>
+
+            </div>
+
+            <!-- lado derecho: formulario -->
+            <div class="contacto-formulario">
+                <h2>Envíanos un mensaje</h2>
+
+                
+                    <div class="grupo-campo">
+                        <label for="nombres">Nombres *</label>
+                        <input type="text" id="nombres" name="nombres">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="telefono">Teléfono / Celular</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="correo">Correo Electrónico *</label>
+                        <input type="email" id="correo" name="correo">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="mensaje">Mensaje *</label>
+                        <input type="text" id="mensaje" name="mensaje">
+                    </div>
+
+                    <div class="contenedor-btn-enviar">
+                        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+     <!-- ................................PIE DE PAGINA........................................ -->
+     
+    <footer class="pie-pagina">
+        <div class="contenedor-pie-pagina">
+            
+            <div class="columna-pie-pagina logo-pie-pagina">
+                <img src="imagenes/logo.png" alt="Logo Letras en la Nube">
+            </div>
+
+            <div class="columna-pie-pagina">
+                <h4>Acerca de nosotros:</h4>
+                <p>Llevamos la literatura hasta las nubes y tus historias <br>favoritas directo a tus manos. Tu próxima gran lectura<br> empieza aquí.</p>
+            </div>
+
+            <div class="columna-pie-pagina">
+                <h4>Redes sociales:</h4>
+                <div class="iconos-redes-sociales">
+                    <a href="#"><img src="imagenes/logo_facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="imagenes/logo_instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+
+            <div class="columna-pie-pagina">
+                <h4>Métodos de pago:</h4>
+                <p>Aceptamos tarjetas de crédito y débito Visa, <br>Mastercard, PayPal, Mercado Pago y pagos<br> en efectivo en tiendas OXXO.</p>
+            </div>
+
+            <div class="columna-pie-pagina">
+                <h4>Atención al cliente:</h4>
+                <p>Email: LibrosEnLaNube@Gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Letras En La Nube. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!--asegura que los caracteres especiales como acentos se muestren bien sin corromperse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--adaptable a dispositivos moviles -->
+    <title>Letras En La Nube</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+</head>
+<body>
+
+    <!--........................................ ENCABEZADO.................................................. -->
+    <header class="encabezado">
+        
+        <div class="contenedor-logo-titulo">
+            <img src="imagenes/logo.png" alt="Logo Letras en la Nube">
+            <h1>Letras En La Nube</h1>
+        </div>
+
+        <!-- menu principal -->
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li style="color: white;">|</li>
+                
+                <!-- submenu -->
+                <li class="dropdown"> <!-- elemento de interfaz donde una lista de opciones permanece oculta hasta que el usuario pasa el cursor -->
+                    <a href="catalogo.html">Género ▾</a>
+                    <ul class="submenu">
+                        <li><a href="catalogo.html">Ficción</a></li>
+                        <li><a href="catalogo.html">Desarrollo Personal</a></li>
+                        <li><a href="catalogo.html">Clásicos</a></li>
+                        <li><a href="catalogo.html">Manga</a></li>
+                    </ul>
+                </li>
+
+                <li style="color: white;">|</li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- buscador -->
+        <div class="buscador">
+            <input type="text" placeholder="Buscar">
+        </div>
+
+    </header>
+
+
+    <!-- ...........................CENTRO........................................................... -->
+
+    <main class="contenedor-principal">
+
+        <div class="contenedor-carrusel">
+            
+            <section class="tarjeta-img-destacada activa">
+                <div class="info-destacada">
+                    <h2>Hábitos atómicos</h2>
+                    <p class="descripcion">
+                        Edición especial, de James Clear.<br>
+                        Editorial PAIDÓS, tapa blanda, edición 1 en español
+                    </p>
+                    <div class="precio">$299</div>
+                    <button type="button" class="btn-comprar">Comprar ahora</button>
+                </div>
+                <div class="imagen-destacada">
+                    <img src="imagenes/habitos_atomicos.png" alt="Libro Hábitos Atómicos">
+                </div>
+            </section>
+
+            <section class="tarjeta-img-destacada">
+                <div class="info-destacada">
+                    <h2>La Metamorfosis</h2>
+                    <p class="descripcion">
+                        Clásico de Franz Kafka.<br>
+                        Edición ilustrada, tapa blanda
+                    </p>
+                    <div class="precio">$180</div>
+                    <button type="button" class="btn-comprar">Comprar ahora</button>
+                </div>
+                <div class="imagen-destacada">
+                    <img src="imagenes/la_metamorfosis.png" alt="Libro La Metamorfosis">
+                </div>
+            </section>
+
+            <section class="tarjeta-img-destacada">
+                <div class="info-destacada">
+                    <h2>Jujutsu Kaisen</h2>
+                    <p class="descripcion">
+                        Manga por Gege Akutami.<br>
+                        Tomo 1 en español
+                    </p>
+                    <div class="precio">$150</div>
+                    <button type="button" class="btn-comprar">Comprar ahora</button>
+                </div>
+                <div class="imagen-destacada">
+                    <img src="imagenes/jujutsu_kaisen.png" alt="Manga Jujutsu Kaisen">
+                </div>
+            </section>
+
+        <section class="tarjeta-img-destacada">
+            <div class="info-destacada">
+                <h2>El príncipe</h2>
+                <p class="descripcion">
+                    Obra cumbre de Nicolás Maquiavelo.<br>
+                    Tratado de política y estrategia, tapa blanda
+                </p>
+                <div class="precio">$195</div>
+                <button type="button" class="btn-comprar">Comprar ahora</button>
+            </div>
+            <div class="imagen-destacada">
+                <img src="imagenes/el_principe.png" alt="Libro El Príncipe">
+            </div>
+        </section>
+
+        </div>
+
+        <div class="puntos-carrusel">
+            <span class="punto activo"></span>
+            <span class="punto"></span>
+            <span class="punto"></span>
+            <span class="punto"></span>
+        </div>
+
+    </main>
+
+    <!-- ................................CODIGO DE JAVASCRIPT........................................ -->
+    <script>
+    let indice = 0;//variable para saber que tarjeta se esta mostrando actualmente
+    function cambiarDiapositiva() {
+        // busca en HTML y guarda en una lista todas las tarjetas que tienen la clase "tarjeta-img-destacada".
+        const tarjetas = document.querySelectorAll('.tarjeta-img-destacada');
+        const puntos = document.querySelectorAll('.punto');
+        // oculta la tarjeta actual quitandole la clase CSS 'activa'
+        tarjetas[indice].classList.remove('activa');
+        // desmarca el punto actual quitandole la clase CSS 'activo' 
+        puntos[indice].classList.remove('activo');
+        // al llegar a la ultima tarjeta, el conteo vuelva a 0
+        indice = (indice + 1) % tarjetas.length;
+        // muestra la nueva tarjeta
+        tarjetas[indice].classList.add('activa');
+        // ilumina el nuevo punto 
+        puntos[indice].classList.add('activo');
+    }
+
+    setInterval(cambiarDiapositiva, 3500);
+</script>
+
+    <!-- ................................PIE DE PAGINA (FOOTER)........................................ -->
+     
+    <footer class="pie-pagina">
+        <div class="contenedor-pie-pagina">
+            <!-- Logo -->
+            <div class="columna-pie-pagina logo-pie-pagina">
+                <img src="imagenes/logo.png" alt="Logo Letras en la Nube">
+            </div>
+
+            <!-- Acerca de nosotros -->
+            <div class="columna-pie-pagina">
+                <h4>Acerca de nosotros:</h4>
+                <p>Llevamos la literatura hasta las nubes y tus historias <br>favoritas directo a tus manos. Tu próxima gran lectura<br> empieza aquí.</p>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="columna-pie-pagina">
+                <h4>Redes sociales:</h4>
+                <div class="iconos-redes-sociales">
+                    <a href="#"><img src="imagenes/logo_facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="imagenes/logo_instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+
+            <!-- Metodos de pago -->
+            <div class="columna-pie-pagina">
+                <h4>Métodos de pago:</h4>
+                <p>Aceptamos tarjetas de crédito y débito Visa, <br>Mastercard, PayPal, Mercado Pago y pagos<br> en efectivo en tiendas OXXO.</p>
+            </div>
+
+            <!-- Atencion al cliente -->
+            <div class="columna-pie-pagina">
+                <h4>Atención al cliente:</h4>
+                <p>Email: LibrosEnLaNube@Gmail.com</p>
+            </div>
+
+        </div>
+
+        <!-- Derechos de autor -->
+        <div class="copyright">
+            <p>&copy; 2026 Letras En La Nube. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
